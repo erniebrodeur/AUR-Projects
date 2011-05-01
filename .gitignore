@@ -3,6 +3,11 @@
 # All pkg's have these:
 *.xz
 *.gz
+*.bz2
+*.zip
+*.part
 pkg/
 src/
 
+# Don't actually want to git my binary packages.
+repo/
