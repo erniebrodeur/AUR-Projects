@@ -1,0 +1,25 @@
+# Contributor: Yejun Yang (yejunx AT gmail DOT com)
+# Maintainer:  Ernie Brodeur (ebrodeur@ujami.net)
+pkgname=ec2-api-tools
+pkgver=1.4.2.4
+pkgrel=1
+pkgdesc="This is the CLI/API interface to Amazon's Web Services."
+arch=('any')
+url="http://developer.amazonwebservices.com/"
+source=(http://ec2-downloads.s3.amazonaws.com/$pkgname-$pkgver.zip)
+depends=(java-runtime)
+license=('custom')
+md5sums=('e8b26933ac3835ce9c1d41cda482650e')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  mkdir -p $pkgdir/usr
+  cp -r lib $pkgdir/usr
+  find $pkgdir -type f | xargs chmod 644
+  cp -r bin $pkgdir/usr
+  rm $pkgdir/usr/bin/*.cmd
+  mkdir -p $pkgdir/usr/share/licenses/$pkgname/
+  install -m 644 license.txt $pkgdir/usr/share/licenses/$pkgname/
+  install -m 644 THIRDPARTYLICENSE.TXT $pkgdir/usr/share/licenses/$pkgname/
+}
+

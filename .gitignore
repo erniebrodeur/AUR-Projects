@@ -1,0 +1,8 @@
+# This will be a fairly complicated ignore by the end.
+
+# All pkg's have these:
+*.xz
+*.gz
+pkg/
+src/
+
