@@ -11,3 +11,4 @@ src/
 
 # Don't actually want to git my binary packages.
 repo/
+packages/
