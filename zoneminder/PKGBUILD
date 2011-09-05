@@ -15,7 +15,6 @@ source=("http://www2.zoneminder.com/downloads/ZoneMinder-${pkgver}.tar.gz"
 zm.rc.d 
 Controls_Orbit.sql 
 Makefile.patch 
-zm_libv4l.patch 
 zminit.arch 
 customdb 
 httpd-zm.conf 
@@ -26,7 +25,6 @@ md5sums=('eaefa14befd482154970541252aa1a39'
 'b20fb25b187eb6abb21321e153a7fb25'
 '5033bc098bf497c8aed1fc1b3c9c5f9c'
 'b7b532b39f0985c2b995c7923728bc1b'
-'60f5654582873da54796a0cf0641dc3c'
 'f9720872736f26d17bc49d8725b75ae4'
 '4ace13d1e20934abe192ef7372c75988'
 '00201eba9c0a5d1ed14b10cc55410698'
@@ -37,7 +35,6 @@ md5sums=('eaefa14befd482154970541252aa1a39'
 build() {
   cd "$srcdir/ZoneMinder-$pkgver"
 
-  patch -p1 -b < $srcdir/zm_libv4l.patch || read
   cat ../Controls_Orbit.sql >> db/zm_create.sql.in
   sed -i '22s/^$/#include <cstdio>/' \
     src/zm_utils.cpp
