@@ -34,11 +34,6 @@ build() {
   cd "$srcdir/ZoneMinder-$pkgver"
 
   cat ../Controls_Orbit.sql >> db/zm_create.sql.in
-  sed -i '22s/^$/#include <cstdio>/' \
-    src/zm_utils.cpp
-  sed -i 's/$max_socket_tries = 3;/$max_socket_tries = 15;/' \
-    web/ajax/stream.php || read
-
   ./configure --prefix=/usr \
     --sysconfdir=/etc \
     --with-webuser=http  \
@@ -47,8 +42,8 @@ build() {
     --with-webdir=/srv/zoneminder/www  \
     --with-cgidir=/srv/zoneminder/cgi-bin \
     --bindir=/srv/zoneminder/bin \
-    --enable-mmap=no \
-    ZM_SSL_LIB=openssl
+    ZM_SSL_LIB=openssl \
+    CPPFLAGS=-D__STDC_CONSTANT_MACROS
 
   make || return 1
   make DESTDIR="$pkgdir" install || return 1
