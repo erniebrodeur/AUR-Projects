@@ -4,7 +4,7 @@
 
 pkgname=rubymine
 _realpkgname=RubyMine
-pkgver=3.2.1
+pkgver=3.2.3
 pkgrel=1
 pkgdesc="A commerical Ruby/Rails IDE.  Has support for evaluation license and opensource project licenses."
 arch=('i686' 'x86_64')
@@ -14,7 +14,7 @@ depends=('java-runtime')
 optdepends=('gtk2') # probably more opts I need to research as well.
 source=("http://download.jetbrains.com/ruby/${_realpkgname}-${pkgver}.tar.gz"
 	RubyMine.desktop)
-md5sums=('5828095da851534fdae5c4933cd8b3cc'
+md5sums=('a51677e45c970babd3829dc4599c5ac1'
          '9558515c3ddfa88ed166ee4431206d88')
 
 package() {
