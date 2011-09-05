@@ -3,9 +3,7 @@
 ## arg 1:  the new package version
 post_install() {
   ln -s /usr/share/cambozola/cambozola.jar /srv/zoneminder/www/
-  chown http.http /var/lib/zm/www/events
-  chown http.http /var/lib/zm/www/images
-  chown http.http /var/lib/zm/www/temp
+  chown -R http.http /srv/zoneminder
   chown http.http /etc/zm.conf
   cat << EOF
 Note:
