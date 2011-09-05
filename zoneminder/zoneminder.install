@@ -2,11 +2,12 @@
 
 ## arg 1:  the new package version
 post_install() {
-chown http.http /var/lib/zm/www/events
-chown http.http /var/lib/zm/www/images
-chown http.http /var/lib/zm/www/temp
-chown http.http /etc/zm.conf
-cat << EOF
+  ln -s /usr/share/cambozola/cambozola.jar /srv/zoneminder/www/
+  chown http.http /var/lib/zm/www/events
+  chown http.http /var/lib/zm/www/images
+  chown http.http /var/lib/zm/www/temp
+  chown http.http /etc/zm.conf
+  cat << EOF
 Note:
 ==> To initialize the ZoneMinder database run (as root)
 ==> /usr/lib/zm/bin/zminit

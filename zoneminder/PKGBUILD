@@ -63,9 +63,6 @@ build() {
   install -D -m 700 $startdir/src/zmeventbackup  $startdir/pkg/etc/cron.hourly/zmeventbackup
   install -D -m 755 $startdir/src/zmfilter.pl $startdir/pkg/usr/lib/zm/bin/zmfilter.pl
 
-  tar -zxf $startdir/src/cambozola-0.50.tar.gz 
-  install -m 644  cambozola-0.50/dist/cambozola.jar $startdir/pkg/var/lib/zm/www/cambozola.jar
-
   mkdir -p  $startdir/pkg/etc/httpd/conf/extra/
   install -m 644 $startdir/src/httpd-zm.conf $startdir/pkg/etc/httpd/conf/extra/httpd-zm.conf
 
