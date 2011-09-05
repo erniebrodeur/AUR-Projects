@@ -44,10 +44,9 @@ build() {
     --with-webuser=http  \
     --with-webgroup=http \
     --with-mysql=/usr  \
-    --with-webdir=/var/lib/zm/www  \
-    --with-cgidir=/var/lib/zm/cgi-bin \
-    --with-extralibs="-lv4l1 -lv4l2" \
-    --bindir=/usr/lib/zm/bin \
+    --with-webdir=/srv/zoneminder/www  \
+    --with-cgidir=/srv/zoneminder/cgi-bin \
+    --bindir=/srv/zoneminder/bin \
     --enable-mmap=no \
     ZM_SSL_LIB=openssl
 
