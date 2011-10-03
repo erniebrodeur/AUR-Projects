@@ -3,6 +3,7 @@
 # All pkg's have these:
 *.xz
 *.gz
+*.tgz
 *.bz2
 *.zip
 *.part
